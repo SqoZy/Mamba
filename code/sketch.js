@@ -49,16 +49,18 @@ function setup() {
 
   points = new Points();
   
-  // Calculate offset to center the map
   let mapWidth = map[0].length * cellSize;
   let mapHeight = map.length * cellSize;
   mapOffsetX = (width - mapWidth) / 2;
   mapOffsetY = (height - mapHeight) / 2;
   
-  // Adjust player starting position to account for offset
   player = new Player(mapOffsetX + 100, mapOffsetY + 100, cellSize, cellSize, 1);
-  screen = 'gamescreen';
-  
+  screen = 'startscreen';
+
+  points.reset();
+  walls = [];
+  candies = [];
+    
   for (let i = 0; i < foodcount; i++) {
     food[i] = Food.generateRandomPosition(map[0].length, map.length);
   }
