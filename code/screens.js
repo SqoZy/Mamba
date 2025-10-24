@@ -17,7 +17,7 @@ function gameScreen() {
     food.forEach(f => f.show());
     walls.forEach(f => f.show());
     candies.forEach(f => f.show());
-    points.display(20, 30, 255, 24);
+    points.display(width / 3, 100, 255, 24);
 
 }
 
